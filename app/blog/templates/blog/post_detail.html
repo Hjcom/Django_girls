@@ -6,6 +6,9 @@
             <div class="date">
                 {{ post.published_date }}
             </div>
+        <!-- 게시일 필드가 비었을 경우 / post_publish 메소드 호출-->
+        {% else %}
+            <a class="btn btn-default" href="url 'post_publish' pk=post.pk %}">Publish</a>
         {% endif %}
 
         <!-- 사용자가 로그인을 했을 경우 이벤트-->
