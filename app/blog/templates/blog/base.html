@@ -1,0 +1,48 @@
+<!-- 정적 파일 : css와 이미지 파일 / 정적 파일 import-->
+{% load static %}
+
+
+<html>
+
+    <head>
+        <title>Django Girls blog</title>
+
+        <!-- 기본 css -->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+        <!-- 부가적인 테마 -->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+        <!-- Google 글꼴 Lobster 로딩-->
+        <link href='//fonts.googleapis.com/css?family-Lobster&subset-latin,latin-ext' rel='stylesheet' type='text/css'>
+
+        <!-- 정적파일 로딩 -->
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+
+    <!-- class명 선언 이유는 css 속성 값 적용을 위해 선언함 / div 태그로 적용 부분 경계 구분-->
+    <body>
+        <div class="page-header">
+            <!-- 사용자가 로그인을 했을 경우 이벤트-->
+            {% if user.is_authenticated %}
+                <!-- 글리프콘 + 적용 -->
+                <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+                <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span><</a>
+            {% endif %}
+            <h1><a href="/">Django Girls Blog</a></h1>
+        </div>
+
+        <!-- 그리드 시스템을 적용하기 위해 container 설정 -->
+        <div class="content container">
+            <div class="row">
+                <!-- 부트스크랩 기본 css 적용 -->
+                <div class="col-md-8">
+                    <!-- 다른 템플릿에도 가져다 쓸수 있게 block 지정 -->
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

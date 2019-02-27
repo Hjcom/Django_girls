@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h1>New Post</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        <!-- 폼의 각 필드를 p 태그 안에서 레이블과 텍스트로 배치, 출력 -->
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}
+
+<!-- csrf : 사이트 간 요청 위조(웹사이트 취약점 공격)
+사용자가 자신의 의지와는 무관하게 공격자가 의도한 행위(수정, 삭제)를 특정 웹사이트에 요청하게 하는 공격
+장고는 csrf_token 를 통해 이를 방지할 수 있다.
+-->

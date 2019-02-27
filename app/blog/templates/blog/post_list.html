@@ -1,0 +1,19 @@
+<!--  base.html 상속(확장) -->
+{% extends 'blog/base.html' %}
+
+
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+
+            <!-- Post 모델에서 기본키를 지정하지 않았기 떄문에 장고는 pk 필드 자동 추가(기본키)/ 링크하면서 기본 키 값도 넘김 -->
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <!-- linebreaksbr : 자동으로 줄바꿈을 해주는 키워드-->
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
+
