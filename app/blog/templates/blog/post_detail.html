@@ -13,8 +13,10 @@
 
         <!-- 사용자가 로그인을 했을 경우 이벤트-->
         {% if user.is_authenticated %}
-            <!-- 글리프콘 지정 -->
+            <!-- 글리프콘 지정 / 게시글 수정 버튼-->
             <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+            <!-- 게시판 삭제 버튼(글리프콘 사용)-->
+            <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
         {% endif %}
 
         <h1>{{ post.title }}</h1>

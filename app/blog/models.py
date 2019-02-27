@@ -14,7 +14,7 @@ class Post(models.Model):
 
     # models.DateTimeField : 날짜와 시간을 의미합니다.
 
-    # 미게시물 게시하는 메소드
+    # 게시한 날짜시간 적용 후 데이터 저장
     def publish(self):
         self.published_date = timezone.now()
         self.save()

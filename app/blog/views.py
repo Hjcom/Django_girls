@@ -67,9 +67,19 @@ def post_draft_list(request):
     posts = Post.objects.filter(published_date__isnull=True).order_by('created_date')
     return render(request, 'blog/post_draft_list.html', {'posts': posts})
 
-
+# 게시물 게시 메소드
 def post_publish(request, pk):
     post = get_object_or_404(Post, pk=pk)
+
+    # models.py publish() 참고
     post.publish()
     return redirect('post_detail', pk=pk)
+
+# 게시물 삭제 메소드
+def post_remove(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+
+    # 해당 데이터 삭제
+    post.delete()
+    return redirect('post_list')
 
