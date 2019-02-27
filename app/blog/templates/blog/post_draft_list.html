@@ -1,8 +1,17 @@
-{% extends 'blog/base.html %}
+<!-- 미게시된 글목록 -->
+{% extends 'blog/base.html' %}
 
 {% block content %}
     {% for post in posts %}
         <div class="post">
             <p class="date">created: {{ post.created_date|date:'d-m-Y' }}</p>
-            <h1><a href="{% url 'post_detail' pk="</h1>
+
+            <!-- 상세페이지로 이동 -->
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+
+            <!-- truncatechars : 문자열이 지정된 문자 수보다 길면 자름 -->
+            <p>{{ post.text|truncatechars:200 }}</p>
         </div>
+    {% endfor %}
+{% endblock %}
+

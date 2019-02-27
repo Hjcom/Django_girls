@@ -61,8 +61,9 @@ def post_edit(request, pk):
         # 처음 페이지에 접속했을 경우 기본 키에 해당되는 인스턴스를 PostForm으로 전달, 텍스트박스에 해당 데이터 출력
     return render(request, 'blog/post_edit.html', {'form': form})
 
-
+# 미게시된 글목록 템플릿 랜더링
 def post_draft_list(request):
-    posts = Post.objects.filter(published_date__isnull=True).order_by('create_date')
+    # 게시한 날짜가 없을경우 내림차순으로 정렬
+    posts = Post.objects.filter(published_date__isnull=True).order_by('created_date')
     return render(request, 'blog/post_draft_list.html', {'posts': posts})
 
