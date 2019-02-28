@@ -4,6 +4,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 from .models import Post
 from .forms import PostForm
+from django.contrib.auth.decorators import login_required
+
 
 # 게시판 리스트
 def post_list(request):
@@ -20,6 +22,7 @@ def post_list(request):
 # render 함수의 리턴값도 HttpResponse(랜더링된 텍스트값)이다.
 
 # 게시판 추가
+@login_required
 def post_new(request):
     if request.method == 'POST':
        form = PostForm(request.POST)
@@ -45,7 +48,7 @@ def post_detail(request, pk):
     # get() 함수를 이용하여 모델은 호출한다. 해당 조건에 해당되는 오브젝트가 존재하지 않을 경우 http404예외 발생
     return render(request, 'blog/post_detail.html', {'post': post})
 
-
+@login_required
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
@@ -62,12 +65,14 @@ def post_edit(request, pk):
     return render(request, 'blog/post_edit.html', {'form': form})
 
 # 미게시된 글목록 템플릿 랜더링
+@login_required
 def post_draft_list(request):
     # 게시한 날짜가 없을경우 내림차순으로 정렬
     posts = Post.objects.filter(published_date__isnull=True).order_by('created_date')
     return render(request, 'blog/post_draft_list.html', {'posts': posts})
 
 # 게시물 게시 메소드
+@login_required
 def post_publish(request, pk):
     post = get_object_or_404(Post, pk=pk)
 
@@ -76,6 +81,7 @@ def post_publish(request, pk):
     return redirect('post_detail', pk=pk)
 
 # 게시물 삭제 메소드
+@login_required
 def post_remove(request, pk):
     post = get_object_or_404(Post, pk=pk)
 
