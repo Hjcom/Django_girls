@@ -8,7 +8,7 @@
             </div>
         <!-- 게시일 필드가 비었을 경우 / post_publish 메소드 호출-->
         {% else %}
-            <a class="btn btn-default" href="url 'post_publish' pk=post.pk %}">Publish</a>
+            <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
         {% endif %}
 
         <!-- 사용자가 로그인을 했을 경우 이벤트-->
@@ -19,7 +19,32 @@
             <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
         {% endif %}
 
+
         <h1>{{ post.title }}</h1>
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
+
+    <hr>
+
+    <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+    {% for comment in post.comments.all %}
+        <div class="comment">
+            <div class="date">
+                {{ comment.created_date }}
+
+                <!--승인여부가 False 일 경우-->
+                {% if not comment.approved_comment %}
+                    <!--승인, 삭제 버튼 생성-->
+                    <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+                    <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
+                {% endif %}
+            </div>
+            <strong>{{ comment.author }}</strong>
+            <p>{{ comment.text|linebreaks }}</p>
+        </div>
+     <!--지정된 배열이 비어 있는 경우-->
+    {% empty %}
+        <p>No comments here yet :</p>
+    {% endfor %}
 {% endblock %}
+

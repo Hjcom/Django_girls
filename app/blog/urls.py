@@ -9,6 +9,13 @@ urlpatterns = [
     path('draft/', views.post_draft_list, name='post_draft_list'), # 미 게시된 글목록 URL
     path('post/<int:pk>/publish/', views.post_publish, name='post_publish'), # 게시 기능 이벤트
     path('post/<int:pk>/remove/', views.post_remove, name='post_remove'), # 게시물 삭제 이벤트
+
+    # 게시물 댓글 페이지 URL
+    path('post/<int:pk>/comment/', views.add_comment_to_post, name='add_comment_to_post'),
+
+    path('comment/<int:pk>/approve/', views.comment_approve, name='comment_approve'),
+
+    path('comment/<int:pk>/remove/', views.comment_remove, name='comment_remove'),
 ]
 
 #   <int:pk> -> 기본 키(primary key)에 해당되는 값을 찾아 뷰에 전달

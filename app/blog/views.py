@@ -2,8 +2,8 @@
 
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
-from .models import Post
-from .forms import PostForm
+from .models import Post, Comment
+from .forms import PostForm, CommentForm
 from django.contrib.auth.decorators import login_required
 
 
@@ -22,6 +22,7 @@ def post_list(request):
 # render 함수의 리턴값도 HttpResponse(랜더링된 텍스트값)이다.
 
 # 게시판 추가
+# @login_required : 로그인 했을 경우만 적용함
 @login_required
 def post_new(request):
     if request.method == 'POST':
@@ -88,4 +89,33 @@ def post_remove(request, pk):
     # 해당 데이터 삭제
     post.delete()
     return redirect('post_list')
+
+# 게시물 댓글 템플릿 랜더링 / 게시물 정보값만 저장
+def add_comment_to_post(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = post
+            comment.save()
+            return redirect('post_detail', pk=post.pk)
+    else:
+        form = CommentForm()
+
+    return render(request, 'blog/add_comment_to_post.html', {'form': form})
+
+# 게시물 댓글 승인 후 게시물 상세 페이지로 이동
+@login_required
+def comment_approve(request, pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    comment.approve()
+    return redirect('post_detail', pk=comment.post.pk)
+
+# 게시물 댓글 삭제 후 게시물 상세 페이지로 이동
+@login_required
+def comment_remove(request, pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    comment.delete()
+    return redirect('post_detail', pk=comment.post.pk)
 
