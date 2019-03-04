@@ -2,35 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd7734c8-e8f2-4560-a492-914502197bd3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/blog/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/blog/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/blog/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/blog/forms.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/blog/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/blog/migrations/0002_auto_20181218_1912.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/blog/migrations/0003_comment.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/blog/migrations/0004_auto_20190228_2116.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/blog/migrations/0005_auto_20190301_1522.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/blog/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/blog/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/blog/static/css/blog.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/blog/templates/blog/add_comment_to_post.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/blog/templates/blog/base.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/blog/templates/blog/post_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/blog/templates/blog/post_draft_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/blog/templates/blog/post_edit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/blog/templates/blog/post_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/blog/templates/registration/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/blog/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/blog/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/blog/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/config/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/config/settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/config/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/config/wsgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customize/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Customize/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Config/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1360">
-              <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
+            <state relative-caret-position="-10">
+              <caret line="93" column="6" lean-forward="true" selection-start-line="93" selection-start-column="6" selection-end-line="93" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -52,8 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Customize/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="36" column="27" lean-forward="true" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
+            <state relative-caret-position="440">
+              <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -61,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Customize/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1100">
-              <caret line="55" column="45" lean-forward="true" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
+            <state relative-caret-position="480">
+              <caret line="63" column="5" lean-forward="true" selection-start-line="57" selection-end-line="63" selection-end-column="5" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -82,8 +55,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Customize/models.py" />
-        <option value="$PROJECT_DIR$/Customize/admin.py" />
         <option value="$PROJECT_DIR$/Config/settings.py" />
+        <option value="$PROJECT_DIR$/Customize/admin.py" />
       </list>
     </option>
   </component>
@@ -153,7 +126,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="895" height="952" extended-state="6" />
+    <frame x="64" y="-11" width="911" height="960" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
@@ -179,30 +152,30 @@
     <entry file="file://$PROJECT_DIR$/Config/urls.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Customize/admin.py">
+    <entry file="file://$PROJECT_DIR$/Config/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1100">
-          <caret line="55" column="45" lean-forward="true" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-10">
+          <caret line="93" column="6" lean-forward="true" selection-start-line="93" selection-start-column="6" selection-end-line="93" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Customize/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="27" lean-forward="true" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
+        <state relative-caret-position="440">
+          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Config/settings.py">
+    <entry file="file://$PROJECT_DIR$/Customize/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
+        <state relative-caret-position="480">
+          <caret line="63" column="5" lean-forward="true" selection-start-line="57" selection-end-line="63" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

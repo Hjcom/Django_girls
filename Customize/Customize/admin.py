@@ -46,13 +46,13 @@ class UserChangeForm(forms.ModelForm):
 
 class UserAdmin(BaseUserAdmin):
     form = UserChangeForm
-    add_form = UserChangeForm
+    add_form = UserCreationForm
 
     list_display = ('email', 'date_of_birth', 'is_admin')
     list_filter = ('is_admin',)
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
-        ('인적 사항', {'fields': ('date_of_birth',)}),
+        ('생년월일', {'fields': ('date_of_birth',)}),
         ('관리자구분', {'fields': ('is_admin',)}),
     )
 
